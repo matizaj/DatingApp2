@@ -7,6 +7,9 @@ import { ListsComponent } from './lists/lists.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { MemberDetailResolver } from './_resolvers/member.detail.resolver';
 import { MemberListResolver } from './_resolvers/member.list.resolver.1';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberEditResolver } from './_resolvers/member.edit.resolver';
+import { PreventUnsafeChanges } from './_guards/prevent-unsafe-changes.guard';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -17,6 +20,8 @@ export const appRoutes: Routes = [
         children: [
             {path: 'members', component: MemberListComponent, resolve: {users: MemberListResolver}},
             {path: 'members/:id', component: MemberDetailComponent, resolve: {user: MemberDetailResolver}},
+            {path: 'member/edit', component: MemberEditComponent, resolve: {user: MemberEditResolver},
+            canDeactivate: [PreventUnsafeChanges] },
             {path: 'messages', component: MessagesComponent},
             {path: 'lists', component: ListsComponent}
         ]

@@ -1,0 +1,19 @@
+.img-thombnail {
+    margin: 25px;
+    width: 85%;
+    height: auto;
+}
+
+.car-body {
+    padding: 0 25px;
+}
+
+.card-footer {
+    padding: 10px 15px;
+    background-color: #fff;
+    border-top: none;
+}
+
+.card-image-top.img-thumbnail {
+    height: 350px;
+}
