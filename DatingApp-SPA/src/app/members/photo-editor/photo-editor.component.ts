@@ -48,7 +48,7 @@ currentMain: Photo;
           url: res.url,
           DateAdded: res.DateAdded,
           Description: res.Description,
-          IsMain: res.IsMain
+          isMain: res.isMain
         };
         this.photos.push(photo);
       }
@@ -59,9 +59,9 @@ currentMain: Photo;
   setMainPhoto(photo: Photo) {
     this.userService.setmainPhoto(this.authService.decodedToken.nameid, photo.id).subscribe(() => {
     console.log(this.photos);
-    this.currentMain = this.photos.filter(p => p.IsMain === true)[0];
-    this.currentMain.IsMain = false;
-    photo.IsMain = true;
+    this.currentMain = this.photos.filter(p => p.isMain === true)[0];
+    this.currentMain.isMain = false;
+    photo.isMain = true;
     this.authService.changeMemberPhoto(photo.url);
     this.authService.currentUser.photoUrl = photo.url;
     localStorage.setItem('user', JSON.stringify(this.authService.currentUser));

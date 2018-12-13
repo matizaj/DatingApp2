@@ -4,9 +4,9 @@
   <div class="text-center">
     <button class="btn btn-sm" type="button" 
     (click)="setMainPhoto(photo)" 
-    [ngClass]="photo.IsMain ? 'btn-success active' : 'btn-secondary'"    
-    [disabled]="photo.IsMain">Main</button>
-    <button class="btn btn-danger" type="button" (click)="deletePhoto(photo.id)" [disabled]="photo.IsMain"><i class="fa fa-trash-o"></i></button>
+    [ngClass]="photo.isMain ? 'btn-success active' : 'btn-secondary'"    
+    [disabled]="photo.isMain">Main</button>
+    <button class="btn btn-danger" type="button" (click)="deletePhoto(photo.id)" [disabled]="photo.isMain"><i class="fa fa-trash-o"></i></button>
   </div>
 </div>
 </div>
