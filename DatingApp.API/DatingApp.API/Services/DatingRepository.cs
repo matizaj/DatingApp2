@@ -50,10 +50,10 @@ namespace DatingApp.API.Services
 
             if(userParams.MinAge !=18 || userParams.MaxAge !=99)
             {
-                var minDateOfBirth = DateTime.Today.AddYears(-userParams.MaxAge-1);
+                var minDoB = DateTime.Today.AddYears(-userParams.MaxAge-1);
                 var maxDoB = DateTime.Today.AddYears(-userParams.MinAge);
 
-                users = users.Where(u=>u.DateOfBirth >= minDateOfBirth && u.DateOfBirth<=maxDoB);
+                users = users.Where(u=>u.DateOfBirth >= minDoB && u.DateOfBirth<=maxDoB);
             }
 
             if (!string.IsNullOrEmpty(userParams.OrderBy))

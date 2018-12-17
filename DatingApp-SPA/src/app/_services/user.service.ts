@@ -24,7 +24,7 @@ getUsers(page?, itemsPerPage?, userParams?): Observable<PaginatedResult<User[]>>
 
   if (userParams != null) {
     params = params.append('minAge', userParams.minAge);
-    params = params.append('maxAge', userParams.mmaxAge);
+    params = params.append('maxAge', userParams.maxAge);
     params = params.append('gender', userParams.gender);
     params = params.append('orderBy', userParams.orderBy);
   }

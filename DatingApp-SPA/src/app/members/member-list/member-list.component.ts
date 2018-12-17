@@ -4,7 +4,6 @@ import { UserService } from '../../_services/user.service';
 import { AlertifyService } from '../../_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 import { Pagination, PaginatedResult } from 'src/app/_services/pagination';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-member-list',
@@ -41,6 +40,7 @@ export class MemberListComponent implements OnInit {
 
 pageChanged(event: any): void {
   this.pagination.currentPage = event.page;
+  this.loadUsers();
 }
 
 resetFilters() {
